@@ -1,12 +1,17 @@
 package com.xworkz.formJdbc.service;
 
 import com.xworkz.formJdbc.dto.FormDTO;
+import com.xworkz.formJdbc.repository.FormRepositoryImpl;
 
 public class FormServiceImpl implements FormService {
 
 	@Override
 	public boolean validateAndSave(FormDTO formDTO) {
 
+		
+		FormRepositoryImpl form=new FormRepositoryImpl();
+		form.save(formDTO);
+		
 		boolean valid=true;
 		if(formDTO!=null) {
 			
